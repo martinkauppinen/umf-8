@@ -1,7 +1,7 @@
 # UMF-8 -- UTF-8 and Morse code converter
 
 ## Why?
-Because.
+[Because.](https://markau.dev/posts/morse-unicode/)
 
 ## How?
 ```
