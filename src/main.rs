@@ -84,7 +84,7 @@ fn grapheme_to_morse(c: &str) -> String {
         }
         morse += " ";
     });
-    morse + PROSIGN_UTF8_END
+    morse + PROSIGN_UTF8_END + " "
 }
 
 fn morse_to_grapheme(morse: &str) -> String {
@@ -123,8 +123,6 @@ fn word_to_morse(word: &str) -> String {
         .graphemes(true)
         .map(|c| grapheme_to_morse(c))
         .collect::<String>()
-        .trim()
-        .to_string()
 }
 
 fn morse_to_word(word: &str) -> String {
@@ -142,6 +140,7 @@ fn morse_to_word(word: &str) -> String {
                 utf_string += " ";
             }
             utf_string += PROSIGN_UTF8_END;
+            utf_string += " ";
             s += &morse_to_grapheme(&utf_string);
 
             // Consume utf
