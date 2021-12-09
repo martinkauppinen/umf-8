@@ -20,7 +20,7 @@ $ cargo run WHAT HATH GOD WROUGHT 🦀
 Converting from Morse code to UTF-8 requires that the string of Morse code is
 within quotes:
 ```
-$ cargo run -- -u ".-- .... .- - / .... .- - .... / --. --- -.. / .-- .-. --- ..- --. .... - / -..... ....---- .--..... .-.--..- .------- .....-"
+$ cargo run -- -u -- ".-- .... .- - / .... .- - .... / --. --- -.. / .-- .-. --- ..- --. .... - / -..... ....---- .--..... .-.--..- .------- .....-"
     Finished dev [unoptimized + debuginfo] target(s) in 0.00s
      Running `target/debug/umf-8 -u '.-- .... .- - / .... .- - .... / --. --- -.. / .-- .-. --- ..- --. .... - / -..... ....---- .--..... .-.--..- .------- .....-'`
 WHAT HATH GOD WROUGHT 🦀
