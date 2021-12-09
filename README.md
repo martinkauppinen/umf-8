@@ -26,3 +26,7 @@ $ cargo run -- -u ".-- .... .- - / .... .- - .... / --. --- -.. / .-- .-. --- ..
 WHAT HATH GOD WROUGHT 🦀
 ```
 
+No non-latin extensions are implemented for the standard set. For decoding
+non-latin characters, use the utf-8 encoded version.
+
+Decoded prosigns are shows as `<PROSIGN>`. No encoding of prosigns is supported.

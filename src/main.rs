@@ -2,7 +2,7 @@ use unicode_segmentation::UnicodeSegmentation;
 use getopts::Options;
 use std::env;
 
-const MORSE: [[&str; 2]; 55] = [
+const MORSE: [[&str; 2]; 60] = [
     ["Aa", ".-"],
     ["Bb", "-..."],
     ["Cc", "-.-."],
@@ -58,6 +58,11 @@ const MORSE: [[&str; 2]; 55] = [
     ["$", "...-..-"],
     ["@", ".--.-."],
     [" ", "/"],
+    ["<END OF WORK>", "...-.-"],
+    ["<ERROR>", "........"],
+    ["<START>", "-.-.-"],
+    ["<NEW PAGE>", ".-.-."],
+    ["<UNDERSTOOD>", "...-."],
 ];
 
 const PROSIGN_UTF8_BEGIN: &str = "-.....";
@@ -101,7 +106,13 @@ fn morse_to_grapheme(morse: &str) -> String {
         std::str::from_utf8(&bytes[..]).unwrap().to_string()
     } else {
         match MORSE.iter().find(|x| x[1] == morse) {
-            Some(c) => { c[0].chars().next().unwrap().to_string() },
+            Some(c) => {
+                if c[0].len() <= 2 {
+                    c[0].chars().next().unwrap().to_string()
+                } else {
+                    c[0].to_string()
+                }
+            },
             _ => { panic!("Unknown morse code: {}", morse) },
         }
     }
